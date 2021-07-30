@@ -1,0 +1,161 @@
+.Calculator {
+	background-color: white;
+	text-align: left;
+	margin: 50px auto;
+	width: 75%;
+  	padding: 2%;
+	border-radius: 15px;
+}
+
+@media screen and (max-width: 576px) {
+	.Calculator {
+		width: 100%;
+		margin: 50px auto 0;
+	}
+	
+	body {
+		padding: 29.875px 0px 0px;
+	}
+}
+
+.Panel {
+	margin: 15px auto;
+}
+
+#Bill {
+	text-align: right;
+	border: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input {
+	font-size: 24px;
+}
+
+.dollar {
+	background-color: hsl(189, 41%, 97%);
+	border: hidden;
+}
+
+input.dollar {
+	width: 90%;
+	text-align: end;
+}
+
+input:focus {
+    outline: none;
+}
+
+.Billgrp:focus-within {
+	border: solid hsl(172, 67%, 45%);
+	padding-right: 0;
+	border-radius: 5px;
+}
+
+.Tip-button:hover {
+	background-color: hsl(185, 41%, 84%);
+	color: hsl(183, 100%, 15%);
+}
+
+.Tip-button:focus {
+	background-color: hsl(172, 67%, 45%);
+}
+
+.Tip-button {
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	padding: 0;
+	border-radius: 5px;
+	border: none;
+	background-color: hsl(183, 100%, 15%);
+	color: hsl(189, 41%, 97%);
+	height: 30px;
+}
+
+.Tip-div {
+	padding: 1%;
+}
+
+.Tip-input {
+	background-color: white;
+	color: hsl(183, 100%, 15%);
+}
+
+.Tip-input::placeholder {
+	color: hsl(183, 100%, 15%);
+}
+
+.Tip-input:focus {
+	border: solid hsl(172, 67%, 45%);	
+	background-color: hsl(189, 41%, 97%);
+}
+
+.NoP {
+	background-color: hsl(189, 41%, 97%);
+	border: hidden;
+}
+
+input.NoP {
+	width: 90%;
+	text-align: end;
+}
+
+.NoPgrp:focus-within {
+	border: solid hsl(172, 67%, 45%);
+	padding-right: 0;
+	border-radius: 5px;
+}
+
+.Result {
+	border-radius: 10px;
+	background-color: hsl(183, 100%, 15%); 
+	padding: 3%;
+}
+
+.Reset-button{
+	display: block;
+	margin: auto;
+	width: 90%;
+	border-radius: 5px;
+	background-color: hsl(172, 67%, 45%);
+}
+
+.Reset-button:hover {
+	background-color: hsl(185, 41%, 84%);
+	text-color: hsl(183, 100%, 15%);
+}
+
+.Reset-button:disabled {
+	background-color: hsl(186, 14%, 43%);
+}
+
+.Result-Title {
+	color: hsl(189, 41%, 97%);
+	margin: 0;
+}
+
+.Result-Subscript {
+	color: hsl(185, 41%, 84%);
+	margin: 0;
+}
+
+.Result-Value {
+	color: hsl(172, 67%, 45%);
+	font-size: 24px;
+	text-align: right;
+}
+
+.Result-grp {
+	margin: 20px auto;
+}
