@@ -7,6 +7,15 @@
 	border-radius: 15px;
 }
 
+label {
+	font-size: 12px;
+}
+
+.hidden {
+	text-align: end;
+    color: red;
+}
+
 @media screen and (max-width: 576px) {
 	.Calculator {
 		width: 100%;
@@ -81,6 +90,7 @@ input:focus {
 	background-color: hsl(183, 100%, 15%);
 	color: hsl(189, 41%, 97%);
 	height: 30px;
+	font-weight: 500;
 }
 
 .Tip-div {
@@ -111,9 +121,27 @@ input.NoP {
 	text-align: end;
 }
 
+.NoPgrp {
+	padding-right: 0;
+}
+
 .NoPgrp:focus-within {
 	border: solid hsl(172, 67%, 45%);
-	padding-right: 0;
+	border-radius: 5px;
+}
+
+.label2{
+	display: none;
+}
+
+.label2hidden{
+	display: inline;
+	text-color: red;
+	text-align: end;
+}
+
+.NoPgrphidden {
+	border: solid red;
 	border-radius: 5px;
 }
 
@@ -143,17 +171,20 @@ input.NoP {
 .Result-Title {
 	color: hsl(189, 41%, 97%);
 	margin: 0;
+	font-size: 15px;
 }
 
 .Result-Subscript {
 	color: hsl(185, 41%, 84%);
 	margin: 0;
+	font-size: 12px;
 }
 
 .Result-Value {
 	color: hsl(172, 67%, 45%);
-	font-size: 24px;
+	font-size: 40px;
 	text-align: right;
+	font-weight: 700;
 }
 
 .Result-grp {

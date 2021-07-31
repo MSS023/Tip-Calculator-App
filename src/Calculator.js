@@ -5,7 +5,7 @@ import React,{useState} from "react";
 
 function Calculator() {
 	//const {obj,setObj}=useState({bill: "",custom: "",NoP: "",tipam: 0, total: 0,perc: 0});
-	const [obj,setObj]=useState(["","","",0,0,0,true]);
+	const [obj,setObj]=useState(["","","",0,0,0,true,""]);
 	var perc;
 	
 	function handleBill(e) {
@@ -16,7 +16,7 @@ function Calculator() {
 			Tipam=Math.round((Bill*obj[5])/(obj[2]))/100;
 			Total=Math.round(((Bill/obj[2]+Tipam))*100)/100;
 		}
-		setObj([Bill,obj[1],obj[2],Tipam,Total,obj[5],false]);
+		setObj([Bill,obj[1],obj[2],Tipam,Total,obj[5],false,obj[7]]);
 	}
 	
 	function setPerc(e) {
@@ -34,22 +34,26 @@ function Calculator() {
 			Tipam=Math.round((obj[0]*perc)/(obj[2]))/100;
 			Total=Math.round(((obj[0]/obj[2]+Tipam))*100)/100;
 		}
-		setObj([obj[0],Custom,obj.[2],Tipam,Total,perc,false]);
+		setObj([obj[0],Custom,obj.[2],Tipam,Total,perc,false,obj[7]]);
 	}
 	
 	function setNoP(e) {
 		var Tipam=0,Total=0;
-		var NoP=e.target.value;
+		var NoP=e.target.value,obj7=obj[7];
+		if(NoP==="0")
+			obj7="hidden";
+		else if(NoP!=="0")
+			obj7="";
 		if(obj[0]!=null && obj[5]!=null && NoP>0)
 		{
 			Tipam=Math.round((obj[0]*obj[5])/(NoP))/100;
 			Total=Math.round(((obj[0]/NoP+Tipam))*100)/100;
 		}
-		setObj([obj[0],obj[1],NoP,Tipam,Total,obj[5],false]);
+		setObj([obj[0],obj[1],NoP,Tipam,Total,obj[5],false,obj7]);
 	}
 	
 	function handleReset(){
-		setObj(["","","",0,0,0,true]);
+		setObj(["","","",0,0,0,true,""]);
 	}
 	
 	return <div className="Calculator row">
@@ -84,10 +88,13 @@ function Calculator() {
   					</div>
 				</div>
 			</div>
-			<label htmlFor="NoP">Number of People</label>
-			<div className="NoP NoPgrp">
-				<img src={person} className="NoPimg" alt="Person" />
-				<input type="number" className="NoP" id="NoP" placeholder="0" value={obj[2]} onChange={setNoP}/>
+			<div className="NoPdiv row">
+				<label className="col-6" htmlFor="NoP">Number of People</label>
+				<label className={"col-6 label2"+obj[7]} htmlFor="Nop">Can't be zero</label>
+				<div className={"NoP NoPgrp"+obj[7]}>
+					<img src={person} className="NoPimg" alt="Person" />
+					<input type="number" className="NoP" id="NoP" placeholder="0" value={obj[2]} onChange={setNoP}/>
+				</div>
 			</div>
 		</div>
 		<div className="Result col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
